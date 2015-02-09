@@ -23,7 +23,6 @@ void cipher(char *string, int shiftkey)
         }
         string[i] = (char) output[i];
     }
-
     printf("%s\n", string);
 }
 
@@ -41,7 +40,6 @@ void decipher (char *string, int shiftkey)
         }
         string[i] = (char) output[i];
     }
-
     printf("%s\n", string);
 }
 
@@ -51,6 +49,5 @@ int main ( int argc, char *argv[])
     shiftkey=atoi(argv[2]);
 
     cipher(argv[1], shiftkey);
-    //decipher(argv[1], shift);
     return 0;
 }
