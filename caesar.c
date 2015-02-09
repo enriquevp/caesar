@@ -1,5 +1,5 @@
 //Caesar.c
-//Implements a basic caesar cipher
+//Implements a basic caesar cipher. Provides ciphering and deciphering
 
 #include <stdio.h>
 #include <string.h>
