@@ -39,7 +39,7 @@ void decipher (char *string, int shiftkey)
     printf("%s\n", string);
 }
 
-int main ( int argc, const char ***argv[])
+int main ( int argc, char *argv[])
 {
     int shiftkey;
     shiftkey=atoi(argv[2]);
