@@ -7,43 +7,39 @@
 
 void cipher(char *string, int shiftkey)
 {
-    int  i, output[50];
+    int  i;
     for (i=0; i < strlen(string);i++)
     {
-        output[i] = (int)string[i];
-        output[i]+=shiftkey;
-        if (output[i] >'z')
+        string[i] += shiftkey;
+        if (string[i] >'z')
         {
-            output[i]-=26;
+            string[i]-=26;
         }
 
-        if (output[i] <'a')
+        if (string[i] <'a')
         {
-            output[i] = ' ';
+            string[i] = ' ';
         }
-        string[i] = (char) output[i];
     }
     printf("%s\n", string);
 }
 
 void decipher (char *string, int shiftkey)
 {
-    int i, output[50];
+    int i;
 
     for (i=0; i < strlen(string);i++)
     {
-        output[i] = (int)string[i];
-        output[i]-=shiftkey;
-        if (output[i] <'a')
+        string[i]-=shiftkey;
+        if (string[i] <'a')
         {
-            output[i]+=26;
+            string[i]+=26;
         }
-        string[i] = (char) output[i];
     }
     printf("%s\n", string);
 }
 
-int main ( int argc, char *argv[])
+int main ( int argc, const char **argv[])
 {
     int shiftkey;
     shiftkey=atoi(argv[2]);
