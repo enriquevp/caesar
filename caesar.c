@@ -20,8 +20,10 @@ void cipher(char *string, int shiftkey){
 }
 
 int main ( int argc, char *argv[]){
-    if (argv[1] == NULL || argv[2] == NULL)
-        errx(1, "This program requires two arguments.");
+    if (argv[1] == NULL || argv[2] == NULL){
+        printf("usage: %s <string> <key>\n", argv[0]);
+        exit(1);
+    }
 
     int shiftkey;
     shiftkey=atoi(argv[2]);
