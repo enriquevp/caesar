@@ -10,10 +10,10 @@ void cipher(char *string, int shiftkey){
         string[i] += shiftkey;
 
         if (string[i] >'z')
-            string[i] = string[i] % 'z';
+            string[i] -=  26;
 
         if (string[i] <'a')
-            string[i] = ' ';
+            string[i] += 26;
     }
 }
 
