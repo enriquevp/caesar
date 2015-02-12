@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <err.h>
 
 void cipher(char *string, int shiftkey){
     int  i;
@@ -13,11 +15,14 @@ void cipher(char *string, int shiftkey){
             string[i] -=  26;
 
         if (string[i] <'a')
-            string[i] += 26;
+            string[i] -= 26;
     }
 }
 
 int main ( int argc, char *argv[]){
+    if (argv[1] == NULL || argv[2] == NULL)
+        errx(1, "This program requires two arguments.");
+
     int shiftkey;
     shiftkey=atoi(argv[2]);
 
