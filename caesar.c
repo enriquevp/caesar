@@ -20,7 +20,7 @@ void cipher(char *string, int shiftkey){
 }
 
 int main ( int argc, char *argv[]){
-    if (argv[1] == NULL || argv[2] == NULL){
+    if (argc != 3){
         printf("usage: %s <string> <key>\n", argv[0]);
         exit(1);
     }
