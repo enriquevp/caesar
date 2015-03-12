@@ -8,6 +8,7 @@
 
 void cipher(char *str, int offset) {
     while (*str) {
+        if (*str == '?') { str++; continue; }
         *str = (*str - 'a' + (offset + 26)) % 26 + 'a' ;
         str++;
     }
