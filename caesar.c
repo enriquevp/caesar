@@ -6,10 +6,10 @@
 #include <stdlib.h>
 #include <err.h>
 
-void cipher(char *string, int shiftkey){
+void cipher(char *string, int offset){
     int  i;
     for (i=0; i < strlen(string); i++){
-        string[i] += shiftkey;
+        string[i] += offset;
 
         if (string[i] >'z')
             string[i] -=  26;
@@ -25,10 +25,10 @@ int main ( int argc, char *argv[]){
         exit(1);
     }
 
-    int shiftkey;
-    shiftkey=atoi(argv[2]);
+    int offset;
+    offset = atoi(argv[2]) % 26;
 
-    cipher(argv[1], shiftkey);
+    cipher(argv[1], offset);
     printf("%s\n", argv[1]); /* Since it is printed after the function finishes,
                               * argv[1] now contains the ciphered string.     */
     return 0;
