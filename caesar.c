@@ -1,4 +1,4 @@
-/* Caesar.c 
+/* Caesar.c
  * Implements a basic caesar cipher. Provides ciphering and deciphering */
 
 #include <stdio.h>
@@ -6,20 +6,20 @@
 #include <stdlib.h>
 #include <err.h>
 
-void cipher(char *string, int offset){
-    int  i;
-    for (i=0; i < strlen(string); i++){
+void cipher(char *string, int offset) {
+    int i;
+    for (i = 0; i < strlen(string); i++){
         string[i] += offset;
 
-        if (string[i] >'z')
+        if (string[i] > 'z')
             string[i] -=  26;
 
-        if (string[i] <'a')
+        if (string[i] < 'a')
             string[i] -= 26;
     }
 }
 
-int main ( int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     if (argc != 3){
         printf("usage: %s <string> <key>\n", argv[0]);
         exit(1);
